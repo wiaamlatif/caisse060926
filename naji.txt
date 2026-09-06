@@ -1,0 +1,111 @@
+          selectRowToChange(idLineToChange);
+          
+          var  allTrBodyProducts =document.querySelectorAll('#tbodyProducts tr');
+          var firstTrBodyProduct = allTrBodyProducts[0];
+              idFirstTrProduct = firstTrBodyProduct.dataset.idproduct;
+              currentSelected[currentTable] =idFirstTrProduct;               
+
+          console.log('idFirstTrProduct',idFirstTrProduct);
+
+          var rows = Array.from(getTableRows(currentTable));
+
+          Array.from(rows).forEach(row => {
+            console.log(row.dataset.idproduct)
+          });
+
+//=====================================
+
+          var allTrBodyProducts =document.querySelectorAll('#tbodyProducts tr');
+          var rows = Array.from(allTrBodyProducts);
+          var index = rows.findIndex( row => { true })
+        
+          console.log('index :',index);
+
+//======================================
+
+const tbody = document.getElementById("tbodyProducts");
+const classes = Array.from(tbody.querySelectorAll('*'))
+                     .flatMap(el => Array.from(el.classList));
+const uniqueClasses = [...new Set(classes)];
+
+console.log(uniqueClasses);
+
+//=================================
+// Sélectionner l'élément
+const element = document.querySelector('.mon-element');
+
+// Vérifier la présence de la classe
+if (element.classList.contains('ma-classe')) {
+    console.log("La classe existe !");
+} else {
+    console.log("La classe n'existe pas.");
+}
+
+//================================
+
+array.findIndex(callback(element, index, array), thisArg)
+
+//=================================
+
+// Création du tableau des jours de la semaine
+const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+
+// Recherche de l'index du jour "Mardi"
+const indexMardi = jours.findIndex(jour => jour === "Mardi");
+
+console.log(indexMardi); // Affiche : 1
+
+//=====================================
+//                         .flatMap(el => Array.from(el.classList));
+//     const uniqueClasses = [...new Set(classes)];
+//     const tbody.querySelectorAll('tr').classList.contains("bg-success")
+    console.log("classes[2]",classes[2].attributes.class);
+
+//==================================== 
+classes.forEach(element => {
+  var green = element.classList.contains("bg-success");
+  console.log("green",green);
+})
+
+//=====================================
+Comment recuperer la valeur id d'une ligne d'un tableau contenue dans tbody du tableau, tbody ayant id="tbodyProducts" en 
+utilisant 1 - tbody.querySelectorAll('#tbodyProducts tr') 2- index des lignes du tableau 3- dataset ?
+
+deepseek :
+// Récupérer toutes les lignes
+const rows = document.querySelectorAll('#tbodyProducts tr');
+
+// Parcourir les lignes et récupérer leur id
+rows.forEach(row => {
+    console.log(row.id); // Affiche l'id de chaque ligne
+});
+
+// Ou récupérer l'id d'une ligne spécifique (ex: la 3ème ligne)
+const thirdRow = document.querySelectorAll('#tbodyProducts tr')[2];
+console.log(thirdRow.id);
+
+// Récupérer tous les ids dans un tableau
+const ids = Array.from(document.querySelectorAll('#tbodyProducts tr')).map(row => row.id);
+console.log(ids);
+//=========================================
+const firstCell = document.querySelector('tr td:first-child');
+
+const allFirstCells = document.querySelectorAll('table tr td:first-child');
+
+allFirstCells.forEach(td => { console.log(td.textContent); });
+
+//=====================================================================
+
+const row = document.querySelector('tr');
+const firstCell = row.cells[0]; // Sélectionne le premier TD de la ligne
+
+//======================================================================
+
+        '<img src="/uploads/products/' + image + '" alt="' + product.name_product + '">' +
+        '<h2>' + product.name_product + '</h2>' +        
+   //     '<p class="product-price">' + product.price + '</p>' +
+   //     '<span class="product-index">' + productIndex + '</span>' +
+        '<span class="product-price">' + product.price + '</span>'  +
+        '<span class="product-index"></span>' +
+
+

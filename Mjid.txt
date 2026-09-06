@@ -1,0 +1,70 @@
+javascript : comment activer par programme un key button par exemple Enter Key button ?
+
+// 1. Cibler l'élément (par exemple, un champ de saisie)
+const inputElement = document.querySelector('input');
+
+// 2. Créer l'événement pour la touche Entrée
+const enterEvent = new KeyboardEvent('keydown', {
+    key: 'Enter',
+    code: 'Enter',
+    keyCode: 13,
+    which: 13,
+    bubbles: true, // Permet à l'événement de remonter dans le DOM
+    cancelable: true
+});
+
+// 3. Déclencher l'événement sur l'élément
+inputElement.dispatchEvent(enterEvent);
+
+//============================================================
+// Soumettre le formulaire directement
+document.querySelector('form').submit();
+
+// Ou simuler le clic sur le bouton de validation
+document.querySelector('#submit-button').click();
+
+//================================================
+Javascript : lorsque qu'une ligne d'une table est selectionnee,
+lorsque j'appuie sur le bouton Enter, j"excute une fonction,
+je souhaite executée la meme fonction mais  cette fois-ci en cliquant seulement sur la meme ligne ?
+
+Javascipt : Comment exécuter la même fonction soit en appuyant sur Entrée, soit en cliquant sur la ligne d'un tableau selectionnée:
+
+//===============================================
+function addProduct(productData) {
+    const table = document.getElementById('idTable4');
+    
+    // Create row
+    const newRow = document.createElement('tr');
+    
+    // Create and append cells
+    const cell1 = document.createElement('td');
+    cell1.textContent = productData.name;
+    newRow.appendChild(cell1);
+    
+    const cell2 = document.createElement('td');
+    cell2.textContent = productData.price;
+    newRow.appendChild(cell2);
+    
+    const cell3 = document.createElement('td');
+    cell3.textContent = productData.quantity;
+    newRow.appendChild(cell3);
+    
+    const cell4 = document.createElement('td');
+    cell4.textContent = productData.category;
+    newRow.appendChild(cell4);
+    
+    // Append row to table
+    table.appendChild(newRow);
+}
+
+// Usage
+addProduct({
+    name: 'Laptop',
+    price: '$999',
+    quantity: '5',
+    category: 'Electronics'
+});
+
+//============================
+//window.location = "http://localhost:8000/index.php";
